@@ -54,9 +54,32 @@ footer {
     text-align: center;
 }
 
+/* animations */
+.nav-header {
+    text-decoration: none;
+    font-weight: normal;
+    animation: bold 0.3s ease;
+}
+.nav-header:hover {
+    animation: none;
+    font-weight: bold;
+}
+@keyframes bold {
+    from {
+        font-weight: normal;
+    }
+    to {
+        font-weight: bold;
+    }
+}
+
+/* themem mngmnt */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: black;
         color: white;
+    }
+    .hero{
+        color: black;
     }
 }

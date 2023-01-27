@@ -8,8 +8,8 @@
     <header>
         <nav>
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="about.html">About</a>
+            <a href="contact.">Contact</a>
         </nav>
     </header>
     <main>
@@ -20,7 +20,7 @@
             <h1>Hi, I'm Filip</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </section>
-        <section class="about">
+        <section id="abt-section" class="about">
             <h2>About Me</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id tempor aliquet, sem nulla bibendum magna, eget euismod nulla ipsum id odio.</p>
         </section>
@@ -36,5 +36,24 @@
     <footer>
         <p>Copyright &copy;2023 Filip K</p>
     </footer>
+    <script>
+        // Get the element with the id "me"
+        // const me = document.getElementById("profile_pic");
+
+        // // Add the "pulse-shadow" class to the element when the page has loaded
+        // window.onload = function() {
+        // me.classList.add("pulse-shadow");
+        // }
+        // Get the current page's URL hash
+        const hash = window.location.hash;
+
+        // Get the element with the id that matches the URL hash
+        const element = document.getElementById(hash.substring(1));
+
+        // Add the "pulse-shadow" class to the element when the page has loaded
+        window.onload = function() {
+        element.classList.add("pulse-shadow");
+        }
+    </script>
 </body>
 </html>

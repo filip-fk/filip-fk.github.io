@@ -26,15 +26,30 @@ main {
     margin: 80px 0 0 0;
 }
 
-.profile-picture {
+/* .profile-picture {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 144px;
+    width: 100%;
     height: 144px;
     background-repeat: no-repeat;
     background-position: center;
+} */
+
+/* Center the profile-picture-container div */
+.profile-picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+  
+/* Make the profile picture a circle */
+.profile-picture {
+    border-radius: 50%;
+    width: 50vw;
+    max-width:250px;
+    height:auto;
+}  
 
 .hero {
     background-color: #f5f5f5;
@@ -95,7 +110,8 @@ footer {
 }
   
 
-/* themem mngmnt */
+/* adaptivity mngmnt */
+/*theme*/
 @media (prefers-color-scheme: dark) {
     body {
         background-color: black;
@@ -104,4 +120,17 @@ footer {
     .hero{
         color: black;
     }
+}
+
+/*size*/
+@media (min-width: 600px) {
+  .profile-picture {
+    width: 25vw;
+  }
+}
+
+@media (min-width: 1000px) {
+  .profile-picture {
+    width: 15vw;
+  }
 }

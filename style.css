@@ -48,7 +48,7 @@ main {
     border-radius: 50%;
     /* width: 50vw; */
     max-width:50px;
-    height:auto;
+    max-height:50px;
 }  
 
 .hero {

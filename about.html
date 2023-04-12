@@ -1,81 +1,49 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      /* Set the font and background color */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-      }
-      /* Set the header style */
-      header {
-        background-color: #fff;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-      }
-      /* Set the header logo style */
-      header img {
-        height: 40px;
-        margin: 10px;
-      }
-      /* Set the header menu style */
-      header nav {
-        display: flex;
-        align-items: center;
-      }
-      /* Set the header menu links style */
-      header nav a {
-        margin-right: 20px;
-        color: #333;
-        text-decoration: none;
-      }
-      /* Set the main content container style */
-      main {
-        padding: 20px;
-      }
-      /* Set the article title style */
-      main h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        color: #333;
-      }
-      /* Set the article content style */
-      main p {
-        font-size: 16px;
-        color: #333;
-        line-height: 1.5;
-        margin-bottom: 20px;
-      }
-      /* Set the "Learn More" button style */
-      .btn {
-        background-color: #333;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 20px;
-        text-decoration: none;
-        display: inline-block;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <img src="logo.png" alt="Leopold Karl logo">
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
-    <main>
-      <h1>Welcome to Leopold Karl</h1>
-      <p>We provide top-notch services for all your needs. Whether you need help with personal finances or business growth, we've got you covered.</p>
-      <a href="#" class="btn">Learn More</a>
-    </main>
-  </body>
+<html lang="en">
+<head>
+  <title>Filip - About</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#">About</a>
+    <a href="index.html#cnt-section">Contact</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="profile-picture-container">
+      <img class="profile-picture" src="profile-picture.jpeg" alt="Profile Picture">
+    </div>
+    <h1>Hi, I'm Filip</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </section>
+  <section id="abt-section" class="about">
+    <h2>About Me</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id tempor aliquet, sem nulla bibendum magna, eget euismod nulla ipsum id odio.</p>
+  </section>
+  <section id="cnt-section" class="projects">
+    <h2>My Projects</h2>
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+      <li>Proin id nibh id quam feugiat bibendum.</li>
+      <li>Sed auctor, magna id tempor aliquet, sem nulla bibendum magna, eget euismod nulla ipsum id odio.</li>
+    </ul>
+  </section>
+</main>
+<footer>
+  <p>Copyright &copy;2023 Filip K</p>
+</footer>
+<script>
+  const hash = window.location.hash;
+
+  const element = document.getElementById(hash.substring(1));
+  window.onload = function() {
+    element.classList.add("pulse-shadow");
+  }
+</script>
+</body>
 </html>

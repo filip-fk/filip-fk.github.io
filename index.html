@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Filip Kalapish</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -7,23 +7,46 @@
   <body>
     <header>
         <nav>
-            <a href="#">Home</a>
-            <!-- <a href="index.html#abt-section">About</a> -->
-            <a href="index.html#cnt-section">Contact</a>
-            <a href="about.html">Contact</a>
+            <a id="big-name">Filip Kalapish</a>
+            <div id="nav-link-container">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="index.html#pjt-section">Projects</a>
+                <a class="nav-link" href="index.html#cnt-section">Contact</a>
+            </div>
         </nav>
     </header>
     <main>
-        <section class="hero">
-            <div class="profile-picture-container">
-                <img calss="profile-picture" src="profile-picture.jpeg" alt="Profile Picture">
-              </div>
-            <h1>Hi, I'm Filip</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <section class="image-section">
+            <div class="image-container">
+                <img src="profile-picture.jpeg" alt="Futuristic Image">
+            </div>
+            <div class="content-container">
+                <h2 class="section-heading">Hi, I'm Filip</h2>
+                <p class="section-description">I am a CS student at ETH Zurich interested in computer graphics and computer
+                    vision with internship experience in AI-chat bot and web design.</p>
+            </div>
         </section>
-        <section id="abt-section" class="about">
-            <h2>About Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id tempor aliquet, sem nulla bibendum magna, eget euismod nulla ipsum id odio.</p>
+        <section class="image-section">
+            <div class="content-container">
+                <h2 class="section-heading">My projects</h2>
+                <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod ligula eu augue pulvinar lobortis. Vestibulum non aliquam sem. Vestibulum vitae lectus non massa sodales ornare eu ac risus.</p>
+            </div>
+            <div class="image-container">
+                <img src="profile-picture.jpeg" alt="Futuristic Image">
+            </div>
+        </section>
+        <section id="pjt-section">
+            <div class="dotstyle dotstyle-hop">
+                <h2>Hop</h2>
+                <ul>
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
         </section>
         <section id="cnt-section" class="projects">
             <h2>My Projects</h2>
@@ -33,28 +56,131 @@
                 <li>Sed auctor, magna id tempor aliquet, sem nulla bibendum magna, eget euismod nulla ipsum id odio.</li>
             </ul>
         </section>
+        <script>
+            ;( function( window ) {
+
+                'use strict';
+
+                function extend( a, b ) {
+                    for( var key in b ) {
+                        if( b.hasOwnProperty( key ) ) {
+                            a[key] = b[key];
+                        }
+                    }
+                    return a;
+                }
+
+                function DotNav( el, options ) {
+                    this.nav = el;
+                    this.options = extend( {}, this.options );
+                    extend( this.options, options );
+                    this._init();
+                }
+
+                DotNav.prototype.options = {};
+
+                DotNav.prototype._init = function() {
+                    // special case "dotstyle-hop"
+                    var hop = this.nav.parentNode.className.indexOf( 'dotstyle-hop' ) !== -1;
+
+                    var dots = [].slice.call( this.nav.querySelectorAll( 'li' ) ), current = 0, self = this;
+
+                    dots.forEach( function( dot, idx ) {
+                        dot.addEventListener( 'click', function( ev ) {
+                            ev.preventDefault();
+                            if( idx !== current ) {
+                                dots[ current ].className = '';
+
+                                // special case
+                                if( hop && idx < current ) {
+                                    dot.className += ' current-from-right';
+                                }
+
+                                setTimeout( function() {
+                                    dot.className += ' current';
+                                    current = idx;
+                                    if( typeof self.options.callback === 'function' ) {
+                                        self.options.callback( current );
+                                    }
+                                }, 25 );
+                            }
+                        } );
+                    } );
+                }
+
+                // add to global namespace
+                window.DotNav = DotNav;
+
+            })( window );
+        </script>
     </main>
     <footer>
         <p>Copyright &copy;2023 Filip K</p>
     </footer>
     <script>
-        // Get the element with the id "me"
-        // const me = document.getElementById("profile_pic");
+        ( function( window ) {
 
-        // // Add the "pulse-shadow" class to the element when the page has loaded
-        // window.onload = function() {
-        // me.classList.add("pulse-shadow");
-        // }
-        // Get the current page's URL hash
+            'use strict';
+
+            function extend( a, b ) {
+                for( var key in b ) {
+                    if( b.hasOwnProperty( key ) ) {
+                        a[key] = b[key];
+                    }
+                }
+                return a;
+            }
+
+            function DotNav( el, options ) {
+                this.nav = el;
+                this.options = extend( {}, this.options );
+                extend( this.options, options );
+                this._init();
+            }
+
+            DotNav.prototype.options = {};
+
+            DotNav.prototype._init = function() {
+                // special case "dotstyle-hop"
+                var hop = this.nav.parentNode.className.indexOf( 'dotstyle-hop' ) !== -1;
+
+                var dots = [].slice.call( this.nav.querySelectorAll( 'li' ) ), current = 0, self = this;
+
+                dots.forEach( function( dot, idx ) {
+                    dot.addEventListener( 'click', function( ev ) {
+                        ev.preventDefault();
+                        if( idx !== current ) {
+                            dots[ current ].className = '';
+
+                            // special case
+                            if( hop && idx < current ) {
+                                dot.className += ' current-from-right';
+                            }
+
+                            setTimeout( function() {
+                                dot.className += ' current';
+                                current = idx;
+                                if( typeof self.options.callback === 'function' ) {
+                                    self.options.callback( current );
+                                }
+                            }, 25 );
+                        }
+                    } );
+                } );
+            }
+
+            // add to global namespace
+            window.DotNav = DotNav;
+
+        })( window );
+
         const hash = window.location.hash;
 
-        // Get the element with the id that matches the URL hash
         const element = document.getElementById(hash.substring(1));
-
-        // Add the "pulse-shadow" class to the element when the page has loaded
         window.onload = function() {
         element.classList.add("pulse-shadow");
         }
+
     </script>
 </body>
 </html>

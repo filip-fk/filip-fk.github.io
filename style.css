@@ -1,114 +1,213 @@
+/*body*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(157deg, rgb(44, 44, 45) 15%, rgb(6, 16, 33) 57%);
+    color: white;
+    overflow-x: hidden;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    position: fixed;
-    top: 0;
+/*nav*/
+header{
+    backdrop-filter: blur(15px);
+    background-color: rgba(28,28,30,0.8);
     width: 100%;
+    position: fixed;
     z-index: 1;
 }
-
-header nav a {
-    color: #fff;
-    margin-left: 10px;
-    text-decoration: none;
+nav {
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 40px;
+    width: calc(100% - 60px);
 }
 
+#nav-link-container{
+    float: right;
+}
+
+.nav-link{
+    color: rgba(242, 242, 247, 1);
+    text-decoration: none;
+    font-size: 17px;
+    padding: 9px 11px;
+    margin: 5px;
+    border: 1px solid rgba(229,229,234, 0.2);
+    background-color: rgba(229,229,234, 0.1);
+    border-radius: 15px;
+    box-shadow:0 20px 30px
+            rgba(0,0,0, 0.1);
+}
+.nav-link:hover {
+    color: silver;
+}
+
+#big-name{
+    color: rgba(242,242,247,1);
+    font-size: 28px;
+
+}
+
+/*main body*/
 main {
     margin: 80px 0 0 0;
 }
 
-/* .profile-picture {
+.image-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 100px;
+    margin-bottom: 100px;
+}
+
+.image-container {
+    width: 20%;
+    animation: slide-in-left 1s ease;
+}
+
+.content-container {
+    width: 50%;
+    animation: slide-in-right 1s ease;
+}
+
+.section-heading {
+    font-size: 48px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.project-section {
+    position: relative;
+    padding: 100px;
+    margin-bottom: 100px;
+}
+
+.dotstyle ul {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dotstyle li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 16px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.dotstyle li a {
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 144px;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
-
-/* Center the profile-picture-container div */
-.profile-picture-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-  
-/* Make the profile picture a circle */
-.profile-picture {
+    height: 100%;
+    outline: none;
     border-radius: 50%;
-    /* width: 50vw; */
-    max-width:50px;
-    max-height:50px;
-}  
-
-.hero {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-indent: -999em; /* make the text accessible to screen readers */
+    cursor: pointer;
+    position: absolute;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+.dotstyle li a:focus {
+    outline: none;
 }
 
-.about,
-.projects {
-    padding: 20px;
+/* Fly in */
+
+.dotstyle-hop li a {
+    border: 2px solid #c44d48;
+    background: transparent;
 }
 
-.about h2,
-.projects h2 {
-    margin-bottom: 10px;
+.dotstyle-hop li a::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    visibility: hidden;
+    background: #fff;
+    opacity: 0;
+    -webkit-transform: rotate(-100deg);
+    transform: rotate(-100deg);
+    -webkit-transform-origin: -200% 50%;
+    transform-origin: -200% 50%;
+    -webkit-transition: -webkit-transform 0.3s ease 0.3s, opacity 0.3s ease, visibility 0s 0.3s ease;
+    transition: transform 0.3s ease 0.3s, opacity 0.3s ease, visibility 0s 0.3s ease;
 }
 
+.dotstyle-hop li a:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dotstyle-hop li.current-from-right a::after {
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: rotate(100deg);
+    transform: rotate(100deg);
+    -webkit-transform-origin: 300% 50%;
+    transform-origin: 300% 50%;
+}
+
+.dotstyle-hop li.current a::after {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/*footer*/
 footer {
-    background-color: #333;
-    color: #fff;
     padding: 10px;
     text-align: center;
 }
 
-/* animations */
-.nav-header {
-    text-decoration: none;
-    font-weight: normal;
-    animation: bold 0.3s ease;
-}
-.nav-header:hover {
-    animation: none;
-    font-weight: bold;
-}
-@keyframes bold {
-    from {
-        font-weight: normal;
-    }
-    to {
-        font-weight: bold;
-    }
-}
-
-.pulse-shadow {
-    /* Add a shadow to the element */
-    box-shadow: 0px 0px 0px #000;
-    transition: box-shadow 0.5s ease;
-}
-  
-.pulse-shadow:hover {
-    /* Increase the size and blur of the shadow when the element is hovered */
-    box-shadow: 0px 0px 20px #000;
-}
-  
 
 /* adaptivity mngmnt */
 /*theme*/

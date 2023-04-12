@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(157deg, rgb(44, 44, 45) 15%, rgb(6, 16, 33) 57%);
+    background: linear-gradient(157deg, rgb(45, 45, 52) 5%, rgb(6, 16, 33) 90%);
     color: white;
     overflow-x: hidden;
 }
@@ -93,11 +93,15 @@ main {
     margin-bottom: 100px;
 }
 
+.dotstyle{
+    text-align: center;
+}
+
 .dotstyle ul {
-    position: relative;
+    /* position: relative; */
     display: inline-block;
-    margin: 0;
-    padding: 0;
+    /* margin: auto; */
+    /* padding: 0; */
     list-style: none;
     cursor: default;
     -webkit-touch-callout: none;
@@ -125,8 +129,8 @@ main {
     height: 100%;
     outline: none;
     border-radius: 50%;
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.3);
+    /*background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.3);*/
     text-indent: -999em; /* make the text accessible to screen readers */
     cursor: pointer;
     position: absolute;
@@ -139,7 +143,7 @@ main {
 /* Fly in */
 
 .dotstyle-hop li a {
-    border: 2px solid #c44d48;
+    border: 2px solid #cccdd3;
     background: transparent;
 }
 

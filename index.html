@@ -1,112 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Filip Kalapish</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="js/dots.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/slides.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
         <nav>
-            <a id="big-name">Filip Kalapish</a>
-            <div id="nav-link-container">
-                <a class="nav-link" href="#">Home</a>
-                <a class="nav-link" href="index.html#pjt-section">Projects</a>
-                <a class="nav-link" href="index.html#cnt-section">Contact</a>
+            <div id="prof-pic-container">
+                <img id="prof-pic" src="profile-picture.jpeg" alt="Futuristic Image">
+                <div id="name-container">
+                    <a id="big-name">filip</a>
+                    <a id="small-name">@filip.kalapish</a>
+                </div>
             </div>
-        </nav>
+            <div id="nav-link-container">
+                <a class="nav-link" href="playground.html">playground</a>
+                <a class="nav-link" href="index.html#projects-section">projects</a>
+                <a class="nav-link" href="#">contact</a>
+            </div>
+            </div>
     </header>
     <main>
-        <section class="image-section">
-            <div class="image-container">
-                <img src="profile-picture.jpeg" alt="Futuristic Image">
-            </div>
-            <div class="content-container">
-                <h2 class="section-heading">Hi, I'm Filip</h2>
-                <p class="section-description">I am a CS student at ETH Zurich interested in computer graphics and computer
-                    vision with internship experience in AI-chat bot and web design.</p>
+        <section id="intro-section">
+            <img id="intro-img" src="profile-picture.jpeg" alt="Futuristic Image">
+            <div id="intro-text">
+                <h2 class="section-heading">hi, there</h2>
+                <p class="section-description">i'll fill this in later...</p>
             </div>
         </section>
-        <!--<section>
-            <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="https://images.pexels.com/photos/1824273/pexels-photo-1824273.jpeg?cs=srgb&dl=pexels-victor-miyata-1824273.jpg&fm=jpg"
-                         class="swiper-lazy" alt="exampleimg"/>
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://images.pexels.com/photos/3219549/pexels-photo-3219549.jpeg?cs=srgb&dl=pexels-engin-akyurt-3219549.jpg&fm=jpg"
-                         class="swiper-lazy" alt="exampleimg"/>
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://images.pexels.com/photos/1579240/pexels-photo-1579240.jpeg?cs=srgb&dl=pexels-stas-knop-1579240.jpg&fm=jpg"
-                         class="swiper-lazy" alt="exampleimg"/>
-                </div>
-                <div class="swiper-slide">
-                    <img src="https://images.pexels.com/photos/51415/pexels-photo-51415.jpeg?cs=srgb&dl=pexels-max-deroin-51415.jpg&fm=jpg"
-                         class="swiper-lazy" alt="exampleimg"/>
-                </div>
-            </div>
-
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-            </div>
-        </section>-->
-        <section>
-            <h1>Projects</h1>
-            <div class="container">
-                <!-- Project content container -->
-                <!-- Slider main container -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide slide_1">Slide 1</div>
-                        <div class="swiper-slide slide_2">Slide 2</div>
-                        <div class="swiper-slide slide_3">Slide 3</div>
-                        <div class="swiper-slide slide_4">Slide 4</div>
-                        <div class="swiper-slide slide_5">Slide 5</div>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-            </div>
-        </section>
-        <section id="pjt-section">
-            <div class="dotstyle dotstyle-hop">
-                <ul>
-                    <li class="current"><a href="#">p0</a></li>
-                    <li><a href="#">p1</a></li>
-                    <li><a href="#">p2</a></li>
-                    <li><a href="#">p3</a></li>
-                    <li><a href="#">p4</a></li>
-                    <li><a href="#">p5</a></li>
-                </ul>
-            </div>
-        </section>
-        <section id="cnt-section" class="projects" style="visibility: hidden">
+        <section id="projects-section" class="projects">
             <h2>My Projects</h2>
             <ul>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                 <li>Proin id nibh id quam feugiat bibendum.</li>
-                <li>Sed auctor, magna id tempor aliquet, sem nulla bibendum magna, eget euismod nulla ipsum id odio.</li>
+                <li>Sed auctor, magna id tempor aliquet, sem nulla bibendum magna, eget euismod nulla ipsum id odio.
+                </li>
             </ul>
         </section>
     </main>
     <footer>
         <p>Copyright &copy;2023 Filip K</p>
     </footer>
-    <script>
-        [].slice.call( document.querySelectorAll( '.dotstyle > ul' ) ).forEach( function( nav ) {
-            new DotNav( nav, {
-                callback : function( idx ) {
-                    console.log( idx )
-                }
-            } );
-        } );
-    </script>
 </body>
+
 </html>
